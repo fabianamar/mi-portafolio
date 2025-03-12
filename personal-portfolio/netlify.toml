@@ -1,3 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = "build"  # o "dist" según tu framework
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
