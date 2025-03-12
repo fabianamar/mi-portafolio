@@ -7,83 +7,75 @@ import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
-export const Projects = () => {
+export const Proyectos = () => {
 
-  const projects = [
+  const proyectos = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      titulo: "E-commerce de una zapatería",
+      descripcion: "Diseño y Desarrollo",
       imgUrl: projImg1,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      titulo: "App de Música",
+      descripcion: "Diseño y Desarrollo",
       imgUrl: projImg2,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
+      titulo: "Simulación de Instagram",
+      descripcion: "Diseño y Desarrollo",
       imgUrl: projImg3,
     },
   ];
 
   return (
-    <section className="project" id="projects">
+    <section className="proyecto" id="proyectos">
       <Container>
         <Row>
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
+              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                <h2>Proyectos</h2>
+                <p>
+                  En esta sección te presento algunos de mis proyectos más destacados, 
+                  los cuales reflejan mi experiencia y habilidades en el diseño y desarrollo web. 
+                  Cada uno de estos proyectos fue creado con un enfoque en la calidad, la funcionalidad 
+                  y la experiencia del usuario. Desde la creación de sitios de comercio electrónico hasta 
+                  aplicaciones móviles innovadoras, cada proyecto es una muestra de mi pasión por el 
+                  desarrollo tecnológico y mi compromiso con la excelencia.
+                </p>
+                <Tab.Container id="tabs-proyectos" defaultActiveKey="primero">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                      <Nav.Link eventKey="primero">Pestaña 1</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                      <Nav.Link eventKey="segundo">Pestaña 2</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                      <Nav.Link eventKey="tercero">Pestaña 3</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="first">
+                    <Tab.Pane eventKey="primero">
                       <Row>
                         {
-                          projects.map((project, index) => {
+                          proyectos.map((proyecto, indice) => {
                             return (
                               <ProjectCard
-                                key={index}
-                                {...project}
-                                />
+                                key={indice}
+                                {...proyecto}
+                              />
                             )
                           })
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Tab.Pane eventKey="seccion">
+                      <p>Este es un ejemplo de cómo se pueden presentar los proyectos en diferentes pestañas. Aquí puedes mostrar más detalles sobre tus otros trabajos.</p>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Tab.Pane eventKey="tercero">
+                      <p>En esta sección, puedes agregar cualquier otra información relevante sobre tus proyectos o incluso un portafolio expandido de trabajos anteriores.</p>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
@@ -92,7 +84,8 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-right" src={colorSharp2} alt="fondo" />
     </section>
   )
 }
+
