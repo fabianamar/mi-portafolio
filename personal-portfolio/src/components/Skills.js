@@ -10,7 +10,6 @@ import colorSharp from "../assets/img/color-sharp.png"
 export const Skills = () => {
   const responsive = {
     superLargeDesktop: {
-      // El nombre puede ser cualquier nombre que elijas.
       breakpoint: { max: 4000, min: 3000 },
       items: 5
     },
@@ -34,24 +33,26 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2>Habilidades</h2>
-                        <p>Lorem Ipsum es simplemente un texto ficticio de la industria de la impresión y la composición tipográfica.<br></br> Lorem Ipsum ha sido el texto estándar de la industria desde la década de 1500.</p>
+                        <h2>Habilidades y Estudios</h2>
+                        <p>Estudiante de Desarrollo de Software con enfoque en Inteligencia Artificial en el Instituto Superior Tecnológico “Los Andes”, ubicado en Santo Domingo, Ecuador. Soy una persona apasionada por el aprendizaje continuo y tengo experiencia en diversas tecnologías como PHP, JavaScript, Laravel, Wordpress y seguridad informática.
+
+Mi experiencia profesional incluye el desarrollo y mantenimiento de sitios web, así como la implementación de aplicaciones web utilizando Laravel e Inertia. Además, he completado cursos especializados en ciberseguridad y tengo un gran interés en la creación de soluciones innovadoras en tecnología.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Imagen" />
+                                <img src={meter1} alt="Desarrollo Web" />
                                 <h5>Desarrollo Web</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Imagen" />
+                                <img src={meter2} alt="Identidad de Marca" />
                                 <h5>Identidad de Marca</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Imagen" />
+                                <img src={meter3} alt="Diseño de Logos" />
                                 <h5>Diseño de Logos</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Imagen" />
-                                <h5>Desarrollo Web</h5>
+                                <img src={meter1} alt="Desarrollo Móvil" />
+                                <h5>Desarrollo Móvil</h5>
                             </div>
                         </Carousel>
                     </div>
@@ -60,6 +61,5 @@ export const Skills = () => {
         </div>
         <img className="background-image-left" src={colorSharp} alt="Imagen" />
     </section>
-  )
+  );
 }
-

@@ -3,89 +3,107 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
+import projImg5 from "../assets/img/project-img5.png";
+import projImg6 from "../assets/img/project-img6.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
-export const Proyectos = () => {
+export const Projects = () => {
 
-  const proyectos = [
+  const projects1 = [
     {
-      titulo: "E-commerce de una zapatería",
-      descripcion: "Diseño y Desarrollo",
+      title: "E-Commerce Slyline IVy",
+      description: "Desarrollo Ux Ui",
       imgUrl: projImg1,
     },
     {
-      titulo: "App de Música",
-      descripcion: "Diseño y Desarrollo",
+      title: "App de Música",
+      description: "Desarrollo Front-end",
       imgUrl: projImg2,
     },
     {
-      titulo: "Simulación de Instagram",
-      descripcion: "Diseño y Desarrollo",
+      title: "Simulación de Instagram con Flutter",
+      description: "Desarrollo Full Stack",
       imgUrl: projImg3,
     },
   ];
 
+  const projects2 = [
+    {
+      title: "Web en Wordpress",
+      description: "Desarrollo",
+      imgUrl: projImg4,
+    },
+    {
+      title: "Sitio Web WebDevine",
+      description: "Desarrollo en Wordpress",
+      imgUrl: projImg5,
+    },
+    {
+      title: "Probet 593",
+      description: "Desarrollo Full Stack",
+      imgUrl: projImg6,
+    },
+  ];
+
   return (
-    <section className="proyecto" id="proyectos">
+    <section className="project" id="projects">
       <Container>
         <Row>
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <h2>Proyectos</h2>
-                <p>
-                  En esta sección te presento algunos de mis proyectos más destacados, 
-                  los cuales reflejan mi experiencia y habilidades en el diseño y desarrollo web. 
-                  Cada uno de estos proyectos fue creado con un enfoque en la calidad, la funcionalidad 
-                  y la experiencia del usuario. Desde la creación de sitios de comercio electrónico hasta 
-                  aplicaciones móviles innovadoras, cada proyecto es una muestra de mi pasión por el 
-                  desarrollo tecnológico y mi compromiso con la excelencia.
-                </p>
-                <Tab.Container id="tabs-proyectos" defaultActiveKey="primero">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <Nav.Item>
-                      <Nav.Link eventKey="primero">Pestaña 1</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="segundo">Pestaña 2</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="tercero">Pestaña 3</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="primero">
-                      <Row>
-                        {
-                          proyectos.map((proyecto, indice) => {
-                            return (
-                              <ProjectCard
-                                key={indice}
-                                {...proyecto}
-                              />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="seccion">
-                      <p>Este es un ejemplo de cómo se pueden presentar los proyectos en diferentes pestañas. Aquí puedes mostrar más detalles sobre tus otros trabajos.</p>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="tercero">
-                      <p>En esta sección, puedes agregar cualquier otra información relevante sobre tus proyectos o incluso un portafolio expandido de trabajos anteriores.</p>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>}
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <h2>Proyectos</h2>
+                  <p> En esta sección, podrás explorar algunos de los proyectos más representativos en los que he trabajado, demostrando mis habilidades en desarrollo web y diseño. </p>
+                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                      <Nav.Item>
+                        <Nav.Link eventKey="first">1</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="second">2</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="third">3</Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+                    <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                      <Tab.Pane eventKey="first">
+                        <Row>
+                          {projects1.map((project, index) => (
+                            <ProjectCard key={index} {...project} />
+                          ))}
+                        </Row>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="second">
+                        <Row>
+                          {projects2.map((project, index) => (
+                            <ProjectCard key={index} {...project} />
+                          ))}
+                        </Row>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="third">
+                        <div style={{ textAlign: "center", fontSize: "1.2rem", fontFamily: "Arial, sans-serif" }}>
+                          <h3>Proyectos Destacados</h3>
+                          <p>Estos proyectos representan algunos de los desafíos más emocionantes en los que he trabajado, combinando innovación, diseño y tecnología para ofrecer experiencias únicas.</p>
+                          <ul style={{ listStyle: "none", padding: 0 }}>
+                            <li><a href="https://front.probet593.com/" target="_blank" rel="noopener noreferrer">Probet 593</a> - Plataforma de apuestas en línea con una interfaz optimizada para usuarios.</li>
+                            <li><a href="https://www.umwrecordingsinc.com/es" target="_blank" rel="noopener noreferrer">UMW Recordings Inc.</a> - Sitio web para una compañía musical con integración de contenido dinámico.</li>
+                          </ul>
+                        </div>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>
+              }
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2} alt="fondo" />
+      <img className="background-image-right" src={colorSharp2} alt="background" />
     </section>
-  )
+  );
 }
-

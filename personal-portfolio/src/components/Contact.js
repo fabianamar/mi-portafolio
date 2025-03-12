@@ -23,25 +23,30 @@ export const Contact = () => {
       })
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setButtonText("Enviando...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
+  
+    // Número de WhatsApp en formato internacional (sin el 0 inicial)
+    const whatsappNumber = "593999656285"; 
+  
+    // Construimos el mensaje con los datos del formulario
+    const message = `Hola, aquí tienes mis datos de contacto:
+    - Nombre: ${formDetails.firstName} ${formDetails.lastName}
+    - Correo: ${formDetails.email}
+    - Teléfono: ${formDetails.phone}
+    - Mensaje: ${formDetails.message}`;
+  
+    // Encode el mensaje para que se envíe correctamente en la URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  
+    // Redirige al usuario a WhatsApp
+    window.open(whatsappURL, "_blank");
+  
     setButtonText("Enviar");
-    let result = await response.json();
     setFormDetails(formInitialDetails);
-    if (result.code == 200) {
-      setStatus({ succes: true, message: 'Mensaje enviado correctamente' });
-    } else {
-      setStatus({ succes: false, message: 'Algo salió mal, por favor intenta nuevamente más tarde.' });
-    }
   };
+  
 
   return (
     <section className="contact" id="connect">
